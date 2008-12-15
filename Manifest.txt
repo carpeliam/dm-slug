@@ -1,7 +1,7 @@
 History.txt
 LICENSE
 Manifest.txt
-README.txt
+README.markdown
 Rakefile
 TODO
 lib/dm-slug.rb
