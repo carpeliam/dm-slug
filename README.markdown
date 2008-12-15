@@ -1,7 +1,7 @@
 dm-slug
 =======
 
-Manages your slug so you don't have to.
+Manages your permalinks so you don't have to.
 
 Internally, makes use of `DataMapper::Types::Slug`, although I'm not terribly
 excited about its implementation at the moment. (After you save a model, you
