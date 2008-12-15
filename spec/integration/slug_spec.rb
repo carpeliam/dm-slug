@@ -3,16 +3,16 @@ require Pathname(__FILE__).dirname.expand_path.parent + 'spec_helper'
 
 class NameExample
   include DataMapper::Resource
+  has_slug
   property :id, Serial
   property :name, String
-  has_slug
 end
 
 class TitleExample
   include DataMapper::Resource
   property :id, Serial
+  property :title, String, :length => 75, :unique_index => true
   has_slug :on => :title
-  property :title, String
 end
 
 class AlternateFieldExample
@@ -41,6 +41,11 @@ if HAS_SQLITE3 || HAS_MYSQL || HAS_POSTGRES
     it "should accept an :on option" do
       te = TitleExample.create :title => 'foo bar'
       TitleExample.first.slug.should == 'foo-bar'
+    end
+    
+    it "should respect the length of the :on field if known" do
+      TitleExample.properties[:slug].length.should == 75 # TitleExample.properties[:title].length
+      TitleExample.properties[:slug].unique_index.should == true # TitleExample.properties[:title].unique_index
     end
     
     it "should accept a :named option" do

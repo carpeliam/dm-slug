@@ -14,12 +14,12 @@ module DataMapper
         
         if properties.has_property? options[:on]
           p = properties[options[:on]]
-          property options[:called], DataMapper::Types::Slug, :length => p.length,
-            :lazy => false, :nullable => false
+          p_opts = {:length => p.length, :lazy => p.lazy?, :nullable => p.nullable?,
+            :unique_index => (p.unique or p.unique_index)}
         else
-          property options[:called], DataMapper::Types::Slug,
-            :lazy => false, :nullable => false
+          p_opts = {:length => options[:length]}
         end
+        property options[:called], DataMapper::Types::Slug, p_opts
           
         before :valid? do
           attribute_set(options[:called], self.send(options[:on]))

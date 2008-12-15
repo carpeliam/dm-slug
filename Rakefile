@@ -11,14 +11,14 @@ EMAIL  = "liam@carpeliam.com"
 GEM_NAME = "dm-slug"
 GEM_VERSION = DataMapper::Has::Slug::VERSION
 GEM_DEPENDENCIES = [["dm-core", GEM_VERSION]]
-GEM_CLEAN = ["log", "pkg"]
+GEM_CLEAN = ["log", "pkg", "coverage"]
 GEM_EXTRAS = { :has_rdoc => true, :extra_rdoc_files => %w[ README.txt LICENSE TODO ] }
 
 PROJECT_NAME = "dm-slug"
 PROJECT_URL  = "http://www.github.com/carpeliam/dm-slug/tree/master"
 PROJECT_DESCRIPTION = PROJECT_SUMMARY = "Manages your slug so you don't have to."
 
-#require ROOT.parent + 'tasks/hoe'
+require ROOT + 'tasks/hoe'
 
 task :default => [ :spec ]
 

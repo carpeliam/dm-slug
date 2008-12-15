@@ -4,9 +4,10 @@ Manifest.txt
 README.txt
 Rakefile
 TODO
-lib/dm-is-example.rb
-lib/dm-is-example/has/example.rb
-lib/dm-is-example/has/version.rb
-spec/integration/example_spec.rb
+lib/dm-slug.rb
+lib/dm-slug/has/slug.rb
+lib/dm-slug/has/version.rb
+spec/integration/slug_spec.rb
 spec/spec.opts
 spec/spec_helper.rb
+tasks/hoe.rb
