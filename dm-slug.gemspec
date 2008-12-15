@@ -26,10 +26,16 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<dm-core>, ["= 0.9.8"])
+      s.add_runtime_dependency(%q<dm-validations>, ["= 0.9.8"])
+      s.add_runtime_dependency(%q<dm-types>, ["= 0.9.8"])
     else
       s.add_dependency(%q<dm-core>, ["= 0.9.8"])
+      s.add_dependency(%q<dm-validations>, ["= 0.9.8"])
+      s.add_dependency(%q<dm-types>, ["= 0.9.8"])
     end
   else
     s.add_dependency(%q<dm-core>, ["= 0.9.8"])
+    s.add_dependency(%q<dm-validations>, ["= 0.9.8"])
+    s.add_dependency(%q<dm-types>, ["= 0.9.8"])
   end
 end

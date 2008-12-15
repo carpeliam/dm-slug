@@ -5,7 +5,9 @@ require 'pathname'
 # Add all external dependencies for the plugin here
 gem 'dm-core', '~>0.9.8'
 require 'dm-core'
+#gem 'dm-validations', '~>0.9.8'
 require 'dm-validations'
+#gem 'dm-types', '~>0.9.8'
 require 'dm-types'
 
 # Require plugin-files
